@@ -1,8 +1,9 @@
 package main
 
 import (
-	"./uc/uc"
 	"fmt"
+
+	"./uc"
 )
 
 func main() {

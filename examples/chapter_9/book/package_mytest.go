@@ -1,10 +1,12 @@
 package main
 
 import (
-	"./pack1/pack1"
 	"fmt"
+
+	"./pack1"
 )
 
+// book/package_mytest.go:4:2: "./pack1/pack1" is relative, but relative import paths are not supported in module mode
 func main() {
 	var test1 string
 	test1 = pack1.ReturnStr()

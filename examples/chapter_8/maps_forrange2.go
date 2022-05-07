@@ -19,3 +19,6 @@ func main() {
 	}
 	fmt.Printf("Version B: Value of items: %v\n", items2)
 }
+
+// Version A: Value of items: [map[1:2] map[1:2] map[1:2] map[1:2] map[1:2]]
+// Version B: Value of items: [map[] map[] map[] map[] map[]]
