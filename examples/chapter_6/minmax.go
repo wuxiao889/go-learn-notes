@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	var min, max int
@@ -16,5 +19,7 @@ func MinMax(a int, b int) (min int, max int) {
 		min = b
 		max = a
 	}
+	strings.Map()
+	strings.IndexFunc()
 	return
 }

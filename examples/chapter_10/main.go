@@ -1,8 +1,9 @@
 package main
 
 import (
-	"./struct_pack/structPack"
 	"fmt"
+
+	structPack "./struct_pack"
 )
 
 func main() {

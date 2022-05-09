@@ -27,3 +27,26 @@ func Min(s ...int) int {
 The minimum is: 0
 The minimum in the slice is: 1
 */
+
+func f1(arr ...int) {
+	f2(arr...)
+	f3(arr)
+}
+
+func f2(arr ...int) {
+}
+
+func f3(arr []int) {}
+
+func y1(arr ...any) {
+	for _, value := range arr {
+		switch v := value.(type) {
+		case int:
+			{
+			}
+		case float32:
+			{
+			}
+		}
+	}
+}

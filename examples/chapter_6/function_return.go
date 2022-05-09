@@ -9,6 +9,10 @@ func main() {
 	// make a special Adder function, a gets value 2:
 	TwoAdder := Adder(2)
 	fmt.Printf("The result is: %v\n", TwoAdder(2))
+	p3 := func(a int) int {
+		return a + 2
+	}(3)
+	fmt.Println(p3)
 }
 
 func Add2() func(b int) int {
