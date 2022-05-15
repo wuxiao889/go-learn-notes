@@ -1,14 +1,35 @@
 // interfaces_poly.go
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 type Shaper interface {
 	Area() float32
 }
 
 type Square struct {
+	Shape
 	side float32
+}
+
+type Circle struct {
+	Shape
+	// 半径
+	redis float32
+}
+
+type Shape struct {
+}
+
+func (sq *Shape) Area() float32 {
+	return 1
+}
+
+func (sq *Circle) Area() float32 {
+	return sq.redis * sq.redis * math.Pi
 }
 
 func (sq *Square) Area() float32 {
@@ -24,8 +45,8 @@ func (r Rectangle) Area() float32 {
 }
 
 func main() {
-	r := Rectangle{5, 3} // Area() of Rectangle needs a value
-	q := &Square{5}      // Area() of Square needs a pointer
+	r := Rectangle{5, 3}  // Area() of Rectangle needs a value
+	q := &Square{side: 5} // Area() of Square needs a pointer
 	shapes := []Shaper{r, q}
 	fmt.Println("Looping through shapes for area ...")
 	for n := range shapes {
