@@ -43,6 +43,15 @@ func (cs Cars) Process(f func(car *Car)) {
 	}
 }
 
+/*
+func (cs Cars) Process(f func(car *Car)) {
+	for _, c := range cs {
+		if (car.Manufacturer == "BMW") && (car.BuildYear > 2010) {
+			cars = append(cars, c)
+		}
+	}
+}
+*/
 // Find all cars matching a given criteria.
 func (cs Cars) FindAll(f func(car *Car) bool) Cars {
 	cars := make([]*Car, 0)
