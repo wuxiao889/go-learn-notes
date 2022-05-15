@@ -30,6 +30,7 @@ func main() {
 	//
 	manufacturers := []string{"Ford", "Aston Martin", "Land Rover", "BMW", "Jaguar"}
 	sortedAppender, sortedCars := MakeSortedAppender(manufacturers)
+	fmt.Println("Map sortedCars: ", sortedCars)
 	allCars.Process(sortedAppender)
 	fmt.Println("Map sortedCars: ", sortedCars)
 	BMWCount := len(sortedCars["BMW"])
@@ -52,6 +53,7 @@ func (cs Cars) Process(f func(car *Car)) {
 	}
 }
 */
+
 // Find all cars matching a given criteria.
 func (cs Cars) FindAll(f func(car *Car) bool) Cars {
 	cars := make([]*Car, 0)
@@ -96,8 +98,9 @@ func MakeSortedAppender(manufacturers []string) (func(car *Car), map[string]Cars
 }
 
 /* Output:
-AllCars:  [0xf8400038a0 0xf840003bd0 0xf840003ba0 0xf840003b70]
-New BMWs:  [0xf840003bd0]
-Map sortedCars:  map[Default:[0xf840003ba0] Jaguar:[] Land Rover:[] BMW:[0xf840003bd0 0xf840003b70] Aston Martin:[] Ford:[0xf8400038a0]]
+AllCars:  [0xc000072150 0xc000072180 0xc0000721b0 0xc0000721e0]
+New BMWs:  [0xc000072180]
+Map sortedCars:  map[Aston Martin:[] BMW:[] Default:[] Ford:[] Jaguar:[] Land Rover:[]]
+Map sortedCars:  map[Aston Martin:[] BMW:[0xc000072180 0xc0000721e0] Default:[0xc0000721b0] Ford:[0xc000072150] Jaguar:[] Land Rover:[]]
 We have  2  BMWs
 */
