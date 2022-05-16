@@ -2,8 +2,9 @@
 package main
 
 import (
-	"./min"
 	"fmt"
+
+	"./min"
 )
 
 func ints() {

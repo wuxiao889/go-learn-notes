@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sort"
+	"strings"
 )
 
 type Person struct {
@@ -21,16 +22,21 @@ func (a Persons) Less(i, j int) bool {
 	return a[i].firstname < a[j].firstname
 }
 
-func (a *Persons) String() string {
-	return fmt.Sprintf("1")
+func (a *Persons) String() (s string) {
+	for i, v := range *a {
+		s += fmt.Sprintf("person %v:", i)
+		s += fmt.Sprintf("%s%s", strings.ToUpper(v.firstname[:1]), v.firstname[1:])
+		s += fmt.Sprintf("%s%s\n", strings.ToUpper(v.lastname[:1]), v.lastname[1:])
+	}
+	return
 }
 
 func main() {
 	p1 := Person{"peter", "cho"}
 	p2 := Person{"jonh", "liu"}
 	p3 := Person{"peter", "jiao"}
-	ps := Persons{p1, p2, p3}
-	fmt.Println(ps)
+	ps := &Persons{p1, p2, p3}
+	fmt.Printf("%v", ps)
 	sort.Sort(ps)
-	fmt.Println(&ps)
+	fmt.Printf("after sort:\n%v", ps)
 }
