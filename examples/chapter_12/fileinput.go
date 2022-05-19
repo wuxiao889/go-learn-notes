@@ -22,6 +22,7 @@ func main() {
 	}
 	defer inputFile.Close()
 
+	//os.file类型实现了io.Reader接口
 	inputReader := bufio.NewReader(inputFile)
 
 	for {
@@ -29,6 +30,8 @@ func main() {
 		fmt.Printf("The input was: %s", inputString)
 		if readerError == io.EOF {
 			return // error or EOF
-		}	
+		}
 	}
 }
+
+// Unix 和 Linux 的行结束符是 \n，而 Windows 的行结束符是 \r\n。

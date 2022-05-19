@@ -19,7 +19,9 @@ var secret interface{} = NotknownType{"Ada", "Go", "Oberon"}
 
 func main() {
 	value := reflect.ValueOf(secret) // <main.NotknownType Value>
-	typ := reflect.TypeOf(secret)    // main.NotknownType
+	fmt.Println(secret)
+	fmt.Println(value)
+	typ := reflect.TypeOf(secret) // main.NotknownType
 	// alternative:
 	//typ := value.Type()  // main.NotknownType
 	fmt.Println(typ)
@@ -39,6 +41,8 @@ func main() {
 }
 
 /* Output:
+Ada - Go - Oberon
+Ada - Go - Oberon
 main.NotknownType
 struct
 Field 0: Ada

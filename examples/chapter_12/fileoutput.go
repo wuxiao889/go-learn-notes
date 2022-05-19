@@ -11,6 +11,8 @@ func main() {
 	// var outputFile *os.File
 	// var outputError os.Error
 	// var outputString string
+
+	//创建一个写入器（缓冲区）对象
 	outputFile, outputError := os.OpenFile("output.dat", os.O_WRONLY|os.O_CREATE, 0666)
 	if outputError != nil {
 		fmt.Printf("An error occurred with file opening or creation\n")
@@ -24,5 +26,6 @@ func main() {
 	for i := 0; i < 10; i++ {
 		outputWriter.WriteString(outputString)
 	}
+	//缓冲区的内容紧接着被完全写入文件
 	outputWriter.Flush()
 }

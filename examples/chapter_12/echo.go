@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-var NewLine = flag.Bool("n", false, "print newline") // echo -n flag, of type *bool
+var NewLine = flag.Bool("n", true, "print newline") // echo -n flag, of type *bool
 
 const (
 	Space   = " "

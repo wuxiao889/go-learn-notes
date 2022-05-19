@@ -23,7 +23,7 @@ func main() {
 
 /* output:
 type: float64
-value: <float64 Value>
+value: 3.4
 type: float64
 kind: float64
 value: 3.4

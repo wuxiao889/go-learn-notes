@@ -31,8 +31,9 @@ func main() {
 		line, err := reader.ReadString('\n')
 		readErr := err
 		// remove \r and \n so 2(in Windows, in Linux only \n, so 1):
+		fmt.Printf("The input was: -%s-", line)
 		line = string(line[:len(line)-2])
-		//fmt.Printf("The input was: -%s-", line)
+		// fmt.Printf("The input was: -%s-", line)
 
 		strSl := strings.Split(line, ";")
 		book := new(Book)
