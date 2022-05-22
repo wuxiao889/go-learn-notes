@@ -30,14 +30,14 @@ func fib() <-chan int {
 			x <- <-a + <-b
 		}
 	}()
-	<- out
+	<-out
 	return out
 }
 
 func main() {
 	start := time.Now()
 	x := fib()
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 50; i++ {
 		fmt.Println(<-x)
 	}
 	end := time.Now()

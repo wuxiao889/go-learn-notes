@@ -6,7 +6,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 // Send the sequence 2, 3, 4, ... to returned channel
@@ -14,7 +13,6 @@ func generate() chan int {
 	ch := make(chan int)
 	go func() {
 		for i := 2; ; i++ {
-			time.Sleep(1e9)
 			ch <- i
 		}
 	}()

@@ -12,7 +12,7 @@ func main() {
 	// shortWait()
 	go shortWait()
 	fmt.Println("About to sleep in main()")
-	time.Sleep(10 * 1e9) // sleep works with a Duration in nanoseconds (ns) !
+	time.Sleep(3 * 1e9) // sleep works with a Duration in nanoseconds (ns) !
 	fmt.Println("At the end of main()")
 }
 

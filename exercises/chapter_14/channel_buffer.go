@@ -1,10 +1,12 @@
 package main
 
-import "fmt"
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	c := make(chan int, 50)
+	c := make(chan int, 1)
 	go func() {
 		time.Sleep(15 * 1e9)
 		x := <-c

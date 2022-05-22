@@ -6,7 +6,7 @@ package main
 import "fmt"
 
 // Send the sequence 2, 3, 4, ... to channel 'ch'.
-func generate(ch chan int) {
+func generate(ch chan<- int) {
 	for i := 2; ; i++ {
 		ch <- i // Send 'i' to channel 'ch'.
 	}

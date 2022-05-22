@@ -1,10 +1,13 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"runtime"
 	"time"
 )
+
+var maxprocess = flag.Int("n", 2, "GOMAXPROCS")
 
 func main() {
 	// setting GOMAXPROCS to 2 gives +- 22% performance increase,
@@ -12,7 +15,9 @@ func main() {
 	// without GOMAXPROCS: +- 86000
 	// setting GOMAXPROCS to 2: +- 105000
 	// setting GOMAXPROCS to 3: +- 94000
-	runtime.GOMAXPROCS(2)
+	flag.PrintDefaults()
+	flag.Parse()
+	runtime.GOMAXPROCS(*maxprocess)
 	ch1 := make(chan int)
 	ch2 := make(chan int)
 

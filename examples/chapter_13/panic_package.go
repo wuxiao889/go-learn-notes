@@ -2,8 +2,9 @@
 package main
 
 import (
-	"./parse/parse"
 	"fmt"
+
+	"./parse"
 )
 
 func main() {
